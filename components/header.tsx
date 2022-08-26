@@ -1,11 +1,11 @@
 import Link from "next/link"
 
-export default function Header() {
+function Header() {
   return (
     <header>
       <nav>
         <Link href='/news'>Новости</Link>
-        <Link href='/newbes'>Новички</Link>
+        <Link href='/newbies'>Новички</Link>
         <Link href='/hards'>Сложный случай</Link>
         <Link href='/finders'>В приюте</Link>
         <Link href='/founds'>Нашли хозяев</Link>
@@ -13,3 +13,5 @@ export default function Header() {
     </header>
   )
 }
+
+export default Header
