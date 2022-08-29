@@ -1,14 +1,12 @@
 import type { NextPage } from "next"
-import Head from "next/head"
-// import Image from "next/image"
+
+import HeadTitle from "../../components/title"
 
 const About: NextPage = () => {
   const title: string = "О нас"
   return (
     <div>
-      <Head>
-        <title>{title}</title>
-      </Head>
+      <HeadTitle title={title} />
       <h1>{title}</h1>
     </div>
   )
