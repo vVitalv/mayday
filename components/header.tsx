@@ -5,10 +5,10 @@ function Header() {
     <header>
       <nav>
         <Link href='/news'>Новости</Link>
-        <Link href='/newbies'>Новички</Link>
-        <Link href='/hards'>Сложный случай</Link>
-        <Link href='/finders'>В приюте</Link>
-        <Link href='/founds'>Нашли хозяев</Link>
+        <Link href='/lodgers/newbies'>Новички</Link>
+        <Link href='/lodgers/hards'>Сложный случай</Link>
+        <Link href='/lodgers/finders'>В приюте</Link>
+        <Link href='/lodgers/founds'>Нашли хозяев</Link>
       </nav>
     </header>
   )
