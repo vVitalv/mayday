@@ -1,14 +1,17 @@
 import type { NextPage } from "next"
+import Head from "next/head"
 // import Image from "next/image"
 
 const WorldNews: NextPage = () => {
+  const title: string = "Новости мира"
   return (
     <div>
-      <h1>Новости мира</h1>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <h1>{title}</h1>
     </div>
   )
 }
-
-WorldNews.title = "Новости мира"
 
 export default WorldNews

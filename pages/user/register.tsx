@@ -1,15 +1,17 @@
-Вход
 import type { NextPage } from "next"
+import Head from "next/head"
 // import Image from "next/image"
 
 const Register: NextPage = () => {
+  const title: string = "Регистрация"
   return (
     <div>
-      <h1>Регистрация</h1>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <h1>{title}</h1>
     </div>
   )
 }
-
-Register.title = "Регистрация"
 
 export default Register

@@ -1,14 +1,17 @@
 import type { NextPage } from "next"
+import Head from "next/head"
 // import Image from "next/image"
 
 const Actions: NextPage = () => {
+  const title: string = "Акции приюта"
   return (
     <div>
-      <h1>Акции приюта</h1>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <h1>{title}</h1>
     </div>
   )
 }
-
-Actions.title = "Акции приюта"
 
 export default Actions

@@ -1,14 +1,17 @@
 import type { NextPage } from "next"
+import Head from "next/head"
 // import Image from "next/image"
 
 const Login: NextPage = () => {
+  const title: string = "Вход"
   return (
     <div>
-      <h1>Вход</h1>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <h1>{title}</h1>
     </div>
   )
 }
-
-Login.title = "Вход"
 
 export default Login

@@ -1,14 +1,17 @@
 import type { NextPage } from "next"
+import Head from "next/head"
 // import Image from "next/image"
 
 const Hards: NextPage = () => {
+  const title: string = "Герои дня"
   return (
     <div>
-      <h1>Герои дня</h1>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <h1>{title}</h1>
     </div>
   )
 }
-
-Hards.title = "Герои дня"
 
 export default Hards

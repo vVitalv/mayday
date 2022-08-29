@@ -1,14 +1,17 @@
 import type { NextPage } from "next"
+import Head from "next/head"
 // import Image from "next/image"
 
 const ShelterNews: NextPage = () => {
+  const title: string = "Новости приюта"
   return (
     <div>
-      <h1>Новости приюта</h1>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <h1>{title}</h1>
     </div>
   )
 }
-
-ShelterNews.title = "Новости приюта"
 
 export default ShelterNews

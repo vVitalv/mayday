@@ -1,14 +1,17 @@
 import type { NextPage } from "next"
+import Head from "next/head"
 // import Image from "next/image"
 
 const Communication: NextPage = () => {
+  const title: string = "Связаться с нами"
   return (
     <div>
-      <h1>Связаться с нами</h1>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <h1>{title}</h1>
     </div>
   )
 }
-
-Communication.title = "Связаться с нами"
 
 export default Communication

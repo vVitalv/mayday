@@ -1,14 +1,17 @@
 import type { NextPage } from "next"
+import Head from "next/head"
 // import Image from "next/image"
 
 const About: NextPage = () => {
+  const title: string = "О нас"
   return (
     <div>
-      <h1>О нас</h1>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <h1>{title}</h1>
     </div>
   )
 }
-
-About.title = "О нас"
 
 export default About
