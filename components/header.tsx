@@ -13,7 +13,24 @@ function Header() {
       </Link>
       <nav className='header_navigation'>
         <div className='header_navigation_list'>
-          <Link href='/news'>Новости</Link>
+          <ul className='header_navigation_list_section'>
+            <li className='menu_item_0'>
+              <Link href='/news'>Новости</Link>
+            </li>
+            <li className='menu_item_1'>
+              <Link href='/news/shelternews'>Новости приюта</Link>
+            </li>
+            <li className='menu_item_2'>
+              <Link href='/news/worldnews'>Новости мира</Link>
+            </li>
+            <li className='menu_item_3'>
+              <Link href='/news/actions'>Акции приюта</Link>
+            </li>
+            <li className='menu_item_4'>
+              <Link href='/news/newsaboutus'>СМИ о нас</Link>
+            </li>
+          </ul>
+
           <Link href='/lodgers'>Животные</Link>
           <Link href='/help'>Помощь</Link>
           <Link href='/info'>Информация</Link>
