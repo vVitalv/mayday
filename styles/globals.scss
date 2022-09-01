@@ -19,51 +19,55 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: $header-bg;
-  .header_navigation {
-    height: 100%;
-    display: flex;
-    a {
-      line-height: $header-height;
-      font-weight: 500;
-    }
-    .header_navigation_section {
+  @media screen {
+    .header_navigation {
       height: 100%;
-      position: relative;
-      width: 10em;
-      margin: 0;
-      .menu_item {
-        position: absolute;
+      display: flex;
+      a {
+        line-height: $header-height;
+        font-weight: 500;
+      }
+      .header_navigation_section {
         height: 100%;
-        width: 100%;
-        text-align: center;
-        color: darkslategray;
-        background-color: $header-bg;
-        transition: all 0.3s;
-        &:hover {
-          color: white;
+        position: relative;
+        width: 10em;
+        margin: 0;
+        padding: 0;
+        li {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          text-align: center;
+          list-style-type: none;
+          color: darkslategray;
+          background-color: $header-bg;
+          transition: all 0.3s;
+          &:hover {
+            color: white;
+          }
         }
-      }
-      .menu_item_0 {
-        z-index: 10;
-      }
-      &:hover  {
-        .menu_item_1 {
-          transform: translateY($header-height);
+        .menu_item_0 {
+          z-index: 10;
         }
-        .menu_item_2 {
-          transform: translateY(calc($header-height * 2));
-        }
-        .menu_item_3 {
-          transform: translateY(calc($header-height * 3));
-        }
-        .menu_item_4 {
-          transform: translateY(calc($header-height * 4));
-        }
-        .menu_item_5 {
-          transform: translateY(calc($header-height * 5));
-        }
-        .menu_item_6 {
-          transform: translateY(calc($header-height * 6));
+        &:hover  {
+          .menu_item_1 {
+            transform: translateY($header-height);
+          }
+          .menu_item_2 {
+            transform: translateY(calc($header-height * 2));
+          }
+          .menu_item_3 {
+            transform: translateY(calc($header-height * 3));
+          }
+          .menu_item_4 {
+            transform: translateY(calc($header-height * 4));
+          }
+          .menu_item_5 {
+            transform: translateY(calc($header-height * 5));
+          }
+          .menu_item_6 {
+            transform: translateY(calc($header-height * 6));
+          }
         }
       }
     }
