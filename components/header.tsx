@@ -41,15 +41,9 @@ function Header() {
             <MenuItem href='/lodgers/finders' text='Ищут дом' />
           </li>
           <li className='menu_item_3'>
-            <MenuItem href='/lodgers/finders/cats' text='Кошки' />
-          </li>
-          <li className='menu_item_4'>
-            <MenuItem href='/lodgers/finders/dogs' text='Собаки' />
-          </li>
-          <li className='menu_item_5'>
             <MenuItem href='/lodgers/hards' text='Сложный случай' />
           </li>
-          <li className='menu_item_6'>
+          <li className='menu_item_4'>
             <MenuItem href='/lodgers/founds' text='Нашли дом' />
           </li>
         </ul>

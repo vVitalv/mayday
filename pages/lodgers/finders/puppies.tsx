@@ -1,0 +1,15 @@
+import type { NextPage } from "next"
+
+import HeadTitle from "../../../components/title"
+
+const Puppies: NextPage = () => {
+  const title: string = "Щенки"
+  return (
+    <div>
+      <HeadTitle title={title} />
+      <h1>{title}</h1>
+    </div>
+  )
+}
+
+export default Puppies
