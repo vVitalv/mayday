@@ -1,7 +1,7 @@
-$header-height: 3em;
+$header-height: 3rem;
 $header-bg: darkorchid;
 
-$footer-height: 5em;
+$footer-height: 5rem;
 
 html,
 body {
@@ -16,34 +16,97 @@ header {
   height: $header-height;
   position: fixed;
   top: 0;
-  padding-left: 1em;
+  padding-left: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: $header-bg;
 
-  .header_navigation {
+  .navigation_button {
+    position: relative;
+    padding: 0;
+    border: none;
+    height: 100%;
+    width: $header-height;
+    @media screen and (min-width: 1024px) {
+      display: none;
+    }
+    &:hover {
+      & nav {
+        display: block;
+      }
+    }
+    svg {
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      stroke: darkgoldenrod;
+    }
+    .mobile_navigation {
+      position: absolute;
+      top: $header-height;
+      right: 0;
+      display: none;
+      z-index: 10;
+      a {
+        line-height: $header-height;
+        font-weight: 500;
+      }
+      .navigation_section {
+        height: 100%;
+        position: relative;
+        width: 10rem;
+        margin: 0;
+        padding: 0;
+        li {
+          height: 100%;
+          width: 100%;
+          text-align: center;
+          list-style-type: none;
+          color: darkslategray;
+          background-color: $header-bg;
+          transition: all 0.3s;
+          &:last-child {
+            border-bottom-left-radius: 0.5em;
+            border-bottom-right-radius: 0.5em;
+          }
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .desktop_navigation {
     height: 100%;
     display: flex;
+    @media (max-width: 1024px) {
+      display: none;
+    }
     a {
       line-height: $header-height;
       font-weight: 500;
     }
-    .header_navigation_section {
+    .navigation_section {
       height: 100%;
       position: relative;
-      width: 10em;
+      width: 10rem;
       margin: 0;
       padding: 0;
       li {
-        position: absolute;
         height: 100%;
         width: 100%;
+        z-index: 10;
         text-align: center;
         list-style-type: none;
         color: darkslategray;
         background-color: $header-bg;
         transition: all 0.3s;
+        &:not(:first-child) {
+          display: none;
+        }
         &:last-child {
           border-bottom-left-radius: 0.5em;
           border-bottom-right-radius: 0.5em;
@@ -52,40 +115,27 @@ header {
           color: white;
         }
       }
-      .menu_item_0 {
-        z-index: 10;
-      }
-      &:hover  {
-        .menu_item_1 {
-          transform: translateY($header-height);
-        }
-        .menu_item_2 {
-          transform: translateY(calc($header-height * 2));
-        }
-        .menu_item_3 {
-          transform: translateY(calc($header-height * 3));
-        }
-        .menu_item_4 {
-          transform: translateY(calc($header-height * 4));
+      &:hover {
+        & li {
+          display: block;
         }
       }
     }
   }
 }
 
-
 .page_container {
   display: flex;
   width: 100%;
   min-height: calc(100vh - $footer-height);
-  padding-top: calc($header-height + 1em);
+  padding-top: $header-height;
   background-color: gray;
   main {
     flex-grow: 1;
   }
   aside {
     display: flex;
-    width: 15em;
+    width: 15rem;
     background-color: aqua;
     @media (min-width: 1024px) {
       width: 100%;
@@ -96,12 +146,10 @@ header {
   }
 }
 
-
-
 footer {
   width: 100%;
   height: $footer-height;
-  padding: 1em;
+  padding: 1rem;
   font-size: smaller;
   font-weight: 600;
   text-align: center;
