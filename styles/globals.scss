@@ -95,29 +95,36 @@ header {
       width: 10rem;
       margin: 0;
       padding: 0;
+
       li {
         height: 100%;
         width: 100%;
         z-index: 10;
-        text-align: center;
+        padding-left: 1em;
         list-style-type: none;
         color: darkslategray;
-        background-color: $header-bg;
+        background-color: orange;
         transition: all 0.3s;
         &:not(:first-child) {
-          display: none;
-        }
-        &:last-child {
-          border-bottom-left-radius: 0.5em;
-          border-bottom-right-radius: 0.5em;
+          visibility: hidden;
+          width: 120%;
+          &:nth-child(even) {
+            transform-origin: right;
+            transform: rotateY(90deg);
+          }
+          &:nth-child(odd) {
+            transform-origin: left;
+            transform: rotateY(-90deg);
+          }
         }
         &:hover {
           color: white;
         }
       }
       &:hover {
-        & li {
-          display: block;
+        & li:not(:first-child) {
+          visibility: visible;
+          transform: rotateY(0deg);
         }
       }
     }

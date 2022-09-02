@@ -23,7 +23,7 @@ function NavMobile() {
             <MenuItem href='/info/communication' text='Контакты' />
           </li>
           <li className='menu_item_3'>
-            <MenuItem href='/info/toowners' text='Владельцам' />
+            <MenuItem href='/info/toowners' text='Будущим владельцам' />
           </li>
           <li className='menu_item_0'>
             <MenuItem href='/user/login' text='Вход' />
