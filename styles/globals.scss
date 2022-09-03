@@ -1,5 +1,13 @@
-$header-height: 3rem;
-$header-bg: darkorchid;
+$color-prime1: #FFFF0A;
+$color-prime2: #FFF542;
+$color-prime3: #FFD64D;
+$color-prime4: #E3B838;
+$color-prime5: #997521;
+$color-second1: #4FA833;
+$color-second2: #85A67A;
+$color-second3: #127826;
+
+$header-height: 4rem;
 
 $footer-height: 5rem;
 
@@ -20,16 +28,32 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $header-bg;
+  background: linear-gradient(to right, $color-prime2 20%, $color-prime3 30%);
+
+  .header_logo {
+    display: flex;
+    color: $color-prime5;
+    transition: color 0.5s;
+    span {
+      padding-left: 2em;
+      font-size: large;
+      font-weight: bolder;
+    }
+    &:hover {
+      color: $color-second1;
+    }
+  }
 
   .navigation_button {
     position: relative;
     padding: 0;
+    display: none;
     border: none;
     height: 100%;
+    background-color: $color-prime4;
     width: $header-height;
-    @media screen and (min-width: 1024px) {
-      display: none;
+    @media screen and (max-width: 1023px) {
+      display: block;
     }
     &:hover {
       & nav {
@@ -37,11 +61,11 @@ header {
       }
     }
     svg {
-      height: 100%;
+      height: 80%;
       position: absolute;
-      top: 0;
-      left: 0;
-      stroke: darkgoldenrod;
+      top: 10%;
+      left: 10%;
+      stroke: $color-second3;
     }
     .mobile_navigation {
       position: absolute;
@@ -65,7 +89,7 @@ header {
           text-align: center;
           list-style-type: none;
           color: darkslategray;
-          background-color: $header-bg;
+          background-color: $color-prime1;
           transition: all 0.3s;
           &:last-child {
             border-bottom-left-radius: 0.5em;
@@ -82,7 +106,7 @@ header {
   .desktop_navigation {
     height: 100%;
     display: flex;
-    @media (max-width: 1024px) {
+    @media (max-width: 1023px) {
       display: none;
     }
     a {
@@ -102,12 +126,13 @@ header {
         z-index: 10;
         padding-left: 1em;
         list-style-type: none;
-        color: darkslategray;
-        background-color: orange;
+        color: $color-second1;
+        background-color: $color-prime3;
         transition: all 0.3s;
         &:not(:first-child) {
           visibility: hidden;
           width: 120%;
+          box-shadow: 0px 0.4em 0.3em $color-prime5;
           &:nth-child(even) {
             transform-origin: right;
             transform: rotateY(90deg);
@@ -118,7 +143,8 @@ header {
           }
         }
         &:hover {
-          color: white;
+          color: $color-second3;
+          background-color: $color-prime4;
         }
       }
       &:hover {
@@ -133,23 +159,36 @@ header {
 
 .page_container {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   min-height: calc(100vh - $footer-height);
   padding-top: $header-height;
-  background-color: gray;
+  background-color: white;
   main {
-    flex-grow: 1;
+    flex-grow: 0;
   }
   aside {
     display: flex;
-    width: 15rem;
-    background-color: aqua;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-top: thick ridge $color-second2;
+    background-color: whitesmoke;
     @media (min-width: 1024px) {
-      width: 100%;
+      flex-direction: column;
+      justify-content: flex-start;
+      border-top: none;
+      border-left: thick ridge $color-second2;
+    }
+    .ad_blok {
+      background-color: #85A67A;
+      height: 180px;
+      width: 180px;
+      margin: 0.5rem;
     }
   }
   @media (min-width: 1024px) {
-    flex-direction: column;
+    flex-direction: row;
   }
 }
 
@@ -160,7 +199,7 @@ footer {
   font-size: smaller;
   font-weight: 600;
   text-align: center;
-  background-color: $header-bg;
+  background-color: $color-prime2;
 }
 
 a {

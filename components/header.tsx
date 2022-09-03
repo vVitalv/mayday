@@ -5,13 +5,18 @@ import logo from "../public/cat-dog.svg"
 import NavDesktop from "./navdesktop"
 import NavMobile from "./navmobile"
 
-
 function Header() {
   return (
     <header>
       <Link href='/' aria-label='На главную'>
         <a>
-          <Image src={logo} alt='Логотип приюта' height={10} width={10} />
+          <div className="header_logo">
+            <Image src={logo} alt='Логотип приюта' height={50} width={50} />
+            <span>
+              МАЙСКИЙ <br />
+              ДЕНЬ
+            </span>
+          </div>
         </a>
       </Link>
       <NavDesktop />

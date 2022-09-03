@@ -8,6 +8,24 @@ const Home: NextPage = () => {
     <div>
       <HeadTitle title={title} />
       <h1>{title}</h1>
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
+      <p>text</p>
     </div>
   )
 }
