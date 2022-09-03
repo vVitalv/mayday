@@ -1,13 +1,12 @@
-$color-prime1: #FFFF0A;
-$color-prime2: #FFF542;
-$color-prime3: #FFD64D;
-$color-prime4: #E3B838;
-$color-prime5: #997521;
-$color-second1: #4FA833;
-$color-second2: #85A67A;
-$color-second3: #127826;
+$c-l-yellow: #f4ed47;
+$c-l-yellow-op: #f4ed47b6;
+$c-l-yellow2: #efea07;
+$c-l-yellow2-op: #efea07b6;
+$c-l-purple: #937acc;
+$c-l-pink: #ed72aa;
+$c-l-pink2: #d60270;
 
-$header-height: 4rem;
+$header-height: 5rem;
 
 $footer-height: 5rem;
 
@@ -19,20 +18,27 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+.underheader {
+  position: fixed;
+  top: $header-height;
+  width: 100%;
+  z-index: 0;
+  background-color: $c-l-yellow-op;
+}
+
 header {
   width: 100%;
   height: $header-height;
   position: fixed;
   top: 0;
   padding-left: 1rem;
+  background-color: $c-l-yellow;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to right, $color-prime2 20%, $color-prime3 30%);
-
   .header_logo {
     display: flex;
-    color: $color-prime5;
+    color: $c-l-purple;
     transition: color 0.5s;
     span {
       padding-left: 2em;
@@ -40,7 +46,7 @@ header {
       font-weight: bolder;
     }
     &:hover {
-      color: $color-second1;
+      color: $c-l-pink;
     }
   }
 
@@ -50,7 +56,7 @@ header {
     display: none;
     border: none;
     height: 100%;
-    background-color: $color-prime4;
+    background-color: $c-l-yellow;
     width: $header-height;
     @media screen and (max-width: 1023px) {
       display: block;
@@ -65,7 +71,7 @@ header {
       position: absolute;
       top: 10%;
       left: 10%;
-      stroke: $color-second3;
+      stroke: $c-l-pink;
     }
     .mobile_navigation {
       position: absolute;
@@ -88,15 +94,16 @@ header {
           width: 100%;
           text-align: center;
           list-style-type: none;
-          color: darkslategray;
-          background-color: $color-prime1;
+          color: $c-l-purple;
+          background-color: $c-l-yellow;
           transition: all 0.3s;
           &:last-child {
             border-bottom-left-radius: 0.5em;
             border-bottom-right-radius: 0.5em;
           }
           &:hover {
-            color: white;
+            color: $c-l-pink;
+            background-color: $c-l-yellow2-op;
           }
         }
       }
@@ -119,20 +126,21 @@ header {
       width: 10rem;
       margin: 0;
       padding: 0;
-
+z-index: 100;
       li {
         height: 100%;
         width: 100%;
-        z-index: 10;
+        position: relative;
+        z-index: 100;
         padding-left: 1em;
         list-style-type: none;
-        color: $color-second1;
-        background-color: $color-prime3;
-        transition: all 0.3s;
+        color: $c-l-purple;
+        background-color: $c-l-yellow;
+        transition: transform 0.3s;
         &:not(:first-child) {
           visibility: hidden;
           width: 120%;
-          box-shadow: 0px 0.4em 0.3em $color-prime5;
+          background-color: $c-l-yellow-op;
           &:nth-child(even) {
             transform-origin: right;
             transform: rotateY(90deg);
@@ -143,8 +151,8 @@ header {
           }
         }
         &:hover {
-          color: $color-second3;
-          background-color: $color-prime4;
+          color: $c-l-pink;
+          background-color: $c-l-yellow2-op;
         }
       }
       &:hover {
@@ -172,16 +180,16 @@ header {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    border-top: thick ridge $color-second2;
+    border-top: thick double $c-l-yellow;
     background-color: whitesmoke;
     @media (min-width: 1024px) {
       flex-direction: column;
       justify-content: flex-start;
       border-top: none;
-      border-left: thick ridge $color-second2;
+      border-left: thick double $c-l-yellow;
     }
     .ad_blok {
-      background-color: #85A67A;
+      background-color: #85a67a;
       height: 180px;
       width: 180px;
       margin: 0.5rem;
@@ -199,7 +207,7 @@ footer {
   font-size: smaller;
   font-weight: 600;
   text-align: center;
-  background-color: $color-prime2;
+  background-color: $c-l-yellow;
 }
 
 a {
