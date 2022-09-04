@@ -9,9 +9,8 @@ export default function MainLayout({ children }) {
   return (
     <Div100vh>
       <Header />
-
+      <div className="bg-image" />
       <div className='page_container'>
-        <UnderHeader />
         <main>{children}</main>
         <Ads />
       </div>

@@ -3,8 +3,10 @@ import MenuItem from "./menuitem"
 
 function NavMobile() {
   return (
-    <button type='button' className='navigation_button'>
-      <MenuIcon />
+    <div className="mobile-menu">
+      <button type='button' className='navigation_button'>
+        <MenuIcon />
+      </button>
       <nav className='mobile_navigation'>
         <ul className='navigation_section'>
           <li className='menu_item_0'>
@@ -25,12 +27,9 @@ function NavMobile() {
           <li className='menu_item_3'>
             <MenuItem href='/info/toowners' text='Будущим владельцам' />
           </li>
-          <li className='menu_item_0'>
-            <MenuItem href='/user/login' text='Вход' />
-          </li>
         </ul>
       </nav>
-    </button>
+    </div>
   )
 }
 

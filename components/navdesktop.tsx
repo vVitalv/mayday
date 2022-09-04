@@ -83,11 +83,6 @@ function NavDesktop() {
           <MenuItem href='/info/toowners' text='Будущим владельцам' />
         </li>
       </ul>
-      <ul className='navigation_section'>
-        <li className='menu_item_0'>
-          <MenuItem href='/user/login' text='Вход' />
-        </li>
-      </ul>
     </nav>
   )
 }
