@@ -80,7 +80,7 @@ function NavDesktop() {
           <MenuItem href='/info/docs' text='Документы' />
         </li>
         <li className='menu_item_3'>
-          <MenuItem href='/info/toowners' text='Будущим владельцам' />
+          <MenuItem href='/info/toowners' text='Правила' />
         </li>
       </ul>
     </nav>

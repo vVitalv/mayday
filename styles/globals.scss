@@ -1,7 +1,5 @@
 $c-l-yellow: #f4ed47;
-$c-l-yellow-op: #f4ed47b6;
 $c-l-yellow2: #efea07;
-$c-l-yellow2-op: #efea07b6;
 $c-l-purple: #937acc;
 $c-l-pink: #ed72aa;
 $c-l-pink2: #d60270;
@@ -32,13 +30,17 @@ header {
     height: 70%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     .header_logo {
       display: flex;
-      color: $c-l-purple;
+      color: $c-l-yellow;
       transition: color 0.5s;
-      span {
+      .logo-text {
+        position: absolute;
+        bottom: 0;
         padding-left: 2em;
-        font-size: large;
+        margin-bottom: -8rem;
+        font-size: 3rem;
         font-weight: bolder;
       }
       &:hover {
@@ -46,17 +48,18 @@ header {
       }
     }
     .mobile-menu {
+      display: none;
+      @media (max-width: 1023px) {
+        display: block;
+      }
       .navigation_button {
         position: relative;
         padding: 0;
-        display: none;
         border: none;
         height: 100%;
         background-color: $c-l-yellow;
         width: $header-height;
-        @media screen and (max-width: 1023px) {
-          display: block;
-        }
+
         &:hover {
           & nav {
             display: block;
@@ -100,7 +103,7 @@ header {
             }
             &:hover {
               color: $c-l-pink;
-              background-color: $c-l-yellow2-op;
+              background-color: $c-l-yellow2;
             }
           }
         }
@@ -108,20 +111,16 @@ header {
     }
 
     .desktop_navigation {
-      height: 100%;
+      height: $header-li-height;
       display: flex;
       @media (max-width: 1023px) {
         display: none;
       }
-      a {
-        line-height: $header-li-height;
-        font-weight: 500;
-      }
       .navigation_section {
-        height: $header-li-height;
+        height: 100%;
         position: relative;
         width: 10rem;
-        margin-left: 1rem;
+        margin: 0 1rem;
         padding: 0;
         border-radius: calc($header-li-height / 2);
         background-color: $c-l-yellow;
@@ -135,31 +134,30 @@ header {
           color: rgb(54, 53, 53);
           list-style-type: none;
           transition: all 0.3s;
+          a {
+            line-height: $header-li-height;
+            font-weight: 500;
+          }
           &:not(:first-child) {
-            visibility: hidden;
             opacity: 0;
           }
           &:hover {
-            color: $c-l-pink;
+            color: $c-l-purple;
           }
         }
         &:hover {
           height: calc($header-li-height * 5);
-          & li:not(:first-child) {
-            visibility: visible;
-            opacity: 0.8;
+          &:nth-child(3) {
+            height: $header-li-height * 2;
           }
-          & li:nth-child(2) {
-            transform: translateY($header-li-height);
+          &:nth-child(4) {
+            height: $header-li-height * 4;
           }
-          & li:nth-child(3) {
-            transform: translateY($header-li-height * 2);
-          }
-          & li:nth-child(4) {
-            transform: translateY($header-li-height * 3);
-          }
-          & li:nth-child(5) {
-            transform: translateY($header-li-height * 4);
+          @for $i from 2 through 5 {
+            & li:nth-child(#{$i}) {
+              transform: translateY($header-li-height * ($i - 1));
+              opacity: 0.8;
+            }
           }
         }
       }
