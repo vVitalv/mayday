@@ -1,5 +1,5 @@
 function UnderHeader() {
-  return <div className='underheader'>dark mode</div>
+  return <div className='underheader'>{' '}</div>
 }
 
 export default UnderHeader

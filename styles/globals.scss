@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Messiri";
+  src: url("/font/messiri_regular.ttf") format("truetype");
+}
+
 $c-l-yellow: #f4ed47;
 $c-l-yellow2: #efea07;
 $c-l-purple: #937acc;
@@ -32,19 +37,20 @@ header {
     justify-content: space-between;
     align-items: center;
     .header_logo {
-      display: flex;
-      color: $c-l-yellow;
-      transition: color 0.5s;
+      position: relative;
       .logo-text {
         position: absolute;
         bottom: 0;
-        padding-left: 2em;
-        margin-bottom: -8rem;
-        font-size: 3rem;
-        font-weight: bolder;
-      }
-      &:hover {
-        color: $c-l-pink;
+        left: 0;
+        user-select: none;
+        margin-bottom: -12rem;
+        color: rgb(239, 248, 152);
+        font-family: "Messiri";
+        font-size: 2rem;
+        transition: color 0.5s;
+        &:hover {
+          color: $c-l-yellow2;
+        }
       }
     }
     .mobile-menu {
@@ -113,6 +119,7 @@ header {
     .desktop_navigation {
       height: $header-li-height;
       display: flex;
+      user-select: none;
       @media (max-width: 1023px) {
         display: none;
       }
