@@ -1,9 +1,9 @@
 import Div100vh from "react-div-100vh"
 
-import Header from "./header"
+import Header from "./header/header"
 import Footer from "./footer"
 import Ads from "./ads"
-import UnderHeader from "./underheader"
+import UnderHeader from "./header/underheader"
 
 export default function MainLayout({ children }) {
   return (

@@ -1,5 +1,5 @@
-import MenuIcon from "./menuicon"
-import MenuItem from "./menuitem"
+import MenuIcon from "./header/menuicon"
+import MenuItem from "./header/menuitem"
 
 function NavMobile() {
   return (
