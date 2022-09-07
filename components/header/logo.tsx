@@ -1,4 +1,7 @@
 import Link from "next/link"
+import Image from "next/image"
+
+import logo from "../../public/favicon.svg"
 
 function Logo() {
   return (

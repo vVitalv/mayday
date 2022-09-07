@@ -1,11 +1,8 @@
 import Link from "next/link"
-import Image from "next/image"
 
-import logo from "../public/favicon.svg"
 import NavDesktop from "./navigation/navdesktop"
-import NavMobile from "../navmobile"
+import NavMobile from "./navigation/navmobile"
 import UnderHeader from "./underheader"
-import LoginIcon from "./buttons/loginicon"
 import Logo from "./logo"
 import HeaderButtons from "./buttons/buttons"
 
