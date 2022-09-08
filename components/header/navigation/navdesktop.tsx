@@ -21,41 +21,41 @@ function NavDesktop() {
         </li>
       </ul>
       <ul className='navigation_section'>
-        <li className='menu_item_0'>
+        <li>
           <MenuItem href='/lodgers' text='Животные' />
         </li>
-        <li className='menu_item_1'>
+        <li>
           <MenuItem href='/lodgers/newbies' text='Новички' />
         </li>
-        <li className='menu_item_2'>
+        <li>
           <MenuItem href='/lodgers/finders' text='Ищут дом' />
         </li>
-        <li className='menu_item_3'>
+        <li>
           <MenuItem href='/lodgers/hards' text='Сложный случай' />
         </li>
-        <li className='menu_item_4'>
+        <li>
           <MenuItem href='/lodgers/founds' text='Нашли дом' />
         </li>
       </ul>
       <ul className='navigation_section'>
-        <li className='menu_item_0'>
+        <li>
           <MenuItem href='/help' text='Как помочь' />
         </li>
-        <li className='menu_item_1'>
+        <li>
           <MenuItem href='/help/donate' text='Помощь онлайн' />
         </li>
       </ul>
       <ul className='navigation_section'>
-        <li className='menu_item_0'>
+        <li>
           <MenuItem href='/info' text='Информация' />
         </li>
-        <li className='menu_item_1'>
+        <li>
           <MenuItem href='/info/communication' text='Контакты' />
         </li>
-        <li className='menu_item_2'>
+        <li>
           <MenuItem href='/info/docs' text='Документы' />
         </li>
-        <li className='menu_item_3'>
+        <li>
           <MenuItem href='/info/toowners' text='Правила' />
         </li>
       </ul>

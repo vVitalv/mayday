@@ -8,7 +8,7 @@ function Logo() {
     <div className='header_logo'>
       <Link href='/' aria-label='На главную'>
         <a>
-          <Image src={logo} alt='Логотип приюта' height={110} width={110} />
+          <Image className="logo-image" src={logo} alt='Логотип приюта' height={60} width={60} />
         </a>
       </Link>
       <div className='logo-text'>

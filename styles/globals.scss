@@ -1,13 +1,9 @@
-@font-face {
-  font-family: "Messiri";
-  src: url("/font/messiri_regular.ttf") format("truetype");
-}
-
 $c-l-yellow: #f4ed47;
 $c-l-yellow2: #efea07;
 $c-l-purple: #937acc;
 $c-l-pink: #ed72aa;
 $c-l-pink2: #d60270;
+$c-l-btn: adjust-color($c-l-yellow, $alpha: -0.8);
 
 $header-height: 6rem;
 $header-li-height: calc($header-height * 0.5);
@@ -29,10 +25,11 @@ header {
   padding: 2rem 1rem 1rem 0;
   display: flex;
   flex-direction: column;
-
+  z-index: 1;
   .upperheader {
     width: 100%;
     height: 70%;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,76 +38,80 @@ header {
       .logo-text {
         position: absolute;
         bottom: 0;
-        left: 2rem;
         filter: blur(1px);
         user-select: none;
-        margin-bottom: -12rem;
+        margin-bottom: -14rem;
         color: rgb(239, 248, 152);
-        font-weight: bolder;
-        font-size: 2rem;
-        transition: color 0.5s;
+        font-weight: thin;
+        font-size: 3rem;
+        transition: color 1s;
         &:hover {
-          color: $c-l-yellow2;
+          color: $c-l-yellow;
         }
       }
     }
-    .mobile-menu {
+    .mobile_navigation {
+      position: relative;
       display: none;
+      height: $header-li-height;
+      width: 10rem;
       @media (max-width: 1023px) {
-        display: block;
+        display: flex;
+        justify-content: center;
       }
-      .navigation_button {
-        position: relative;
-        padding: 0;
-        border: none;
+      button {
+        background-color: $c-l-btn;
+        border-radius: 0.5rem;
+        border-width: 0;
         height: 100%;
-        background-color: $c-l-yellow;
-        width: $header-height;
-
+        width: $header-li-height;
+        padding: 0;
+        transition: background-color 0.3s;
         &:hover {
-          & nav {
-            display: block;
+          background-color: opacify($c-l-btn, 0.2);
+        }
+        svg {
+          stroke: $c-l-yellow;
+          padding: 10%;
+        }
+      }
+      .navigation_section {
+        height: 100%;
+        position: absolute;
+        width: 10rem;
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+        transition: all 0.3s;
+        li {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          text-align: center;
+          list-style-type: none;
+          color: rgb(54, 53, 53);
+          background-color: $c-l-btn;
+          transition: all 0.3s;
+          a {
+            line-height: $header-li-height;
+            font-weight: 500;
+          }
+          &:last-child {
+            border-bottom-left-radius: 0.5em;
+            border-bottom-right-radius: 0.5em;
+          }
+          &:hover {
+            color: $c-l-pink;
+            background-color: opacify($c-l-btn, 0.2);
           }
         }
-        .menu-icon {
-          height: 80%;
-          position: absolute;
-          top: 10%;
-          left: 10%;
-          stroke: $c-l-pink;
-        }
       }
-      .mobile_navigation {
-        position: absolute;
-        top: $header-height;
-        right: 0;
-        display: none;
-        z-index: 10;
-        a {
-          line-height: $header-height;
-          font-weight: 500;
-        }
+      &:hover {
         .navigation_section {
-          height: 100%;
-          position: relative;
-          width: 10rem;
-          margin: 0;
-          padding: 0;
-          li {
-            height: 100%;
-            width: 100%;
-            text-align: center;
-            list-style-type: none;
-            color: $c-l-purple;
-            background-color: $c-l-yellow;
-            transition: all 0.3s;
-            &:last-child {
-              border-bottom-left-radius: 0.5em;
-              border-bottom-right-radius: 0.5em;
-            }
-            &:hover {
-              color: $c-l-pink;
-              background-color: $c-l-yellow2;
+          opacity: 0.8;
+          @for $i from 1 through 6 {
+            & li:nth-child(#{$i}) {
+              transform: translateY($header-li-height * ($i - 0));
             }
           }
         }
@@ -132,7 +133,6 @@ header {
         padding: 0;
         border-radius: calc($header-li-height / 2);
         background-color: $c-l-yellow;
-        z-index: 1;
         transition: height 0.3s;
         li {
           height: $header-li-height;
@@ -170,10 +170,22 @@ header {
         }
       }
     }
-    .login-button {
+    .header-buttons {
       height: 100%;
-      .login-icon {
-        height: 80%;
+      button {
+        margin-left: 0.5rem;
+        background-color: $c-l-btn;
+        border-radius: 0.5rem;
+        border-width: 0;
+        height: 100%;
+        transition: background-color 0.3s;
+        &:hover {
+          background-color: opacify($c-l-btn, 0.2);
+        }
+        svg {
+          fill: $c-l-yellow;
+          height: 80%;
+        }
       }
     }
   }
@@ -188,6 +200,7 @@ header {
   width: 100%;
   height: 100vh;
   background-image: url("/bg/bg-1920.webp");
+  filter: brightness(70%);
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-attachment: fixed;
