@@ -54,7 +54,7 @@ header {
       position: relative;
       display: none;
       height: $header-li-height;
-      width: 10rem;
+      width: $header-li-height;
       @media (max-width: 1023px) {
         display: flex;
         justify-content: center;
@@ -64,7 +64,7 @@ header {
         border-radius: 0.5rem;
         border-width: 0;
         height: 100%;
-        width: $header-li-height;
+        width: 100%;
         padding: 0;
         transition: background-color 0.3s;
         &:hover {
@@ -134,36 +134,45 @@ header {
         border-radius: calc($header-li-height / 2);
         background-color: $c-l-yellow;
         transition: height 0.3s;
+        .section_button {
+          background-color: transparent;
+          top: 0;
+          font-weight: bold;
+          border: 0;
+          height: $header-li-height;
+          width: 100%;
+          position: absolute;
+        }
         li {
           height: $header-li-height;
           width: 100%;
           position: absolute;
+          visibility: hidden;
+          opacity: 0;
           text-align: center;
+          font-weight: 500;
           color: rgb(54, 53, 53);
           list-style-type: none;
           transition: all 0.3s;
           a {
             line-height: $header-li-height;
-            font-weight: 500;
-          }
-          &:not(:first-child) {
-            opacity: 0;
           }
           &:hover {
             color: $c-l-purple;
           }
         }
-        &:hover {
+        &.show_menu {
           height: calc($header-li-height * 5);
           &:nth-child(3) {
-            height: $header-li-height * 2;
+            height: $header-li-height * 3;
           }
           &:nth-child(4) {
-            height: $header-li-height * 4;
+            height: $header-li-height * 5;
           }
-          @for $i from 2 through 5 {
+          @for $i from 1 through 5 {
             & li:nth-child(#{$i}) {
               transform: translateY($header-li-height * ($i - 1));
+              visibility: visible;
               opacity: 0.8;
             }
           }
@@ -200,7 +209,7 @@ header {
   width: 100%;
   height: 100vh;
   background-image: url("/bg/bg-1920.webp");
-  filter: brightness(70%);
+  filter: contrast(80%);
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-attachment: fixed;

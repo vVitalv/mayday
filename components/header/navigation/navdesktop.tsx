@@ -1,9 +1,19 @@
-import MenuItem from "./menuitem"
+import NavSection from "./navsection"
 
 function NavDesktop() {
+  const navLinks = {
+    news: ["shelternews", "worldnews", "worldnews", "actions"],
+    lodgers: ["newbies", "finders", "hards", "founds"],
+    help: ["howhelp", "donate"],
+    info: ["about", "communication", "docs", "toowners"],
+  }
   return (
     <nav className='desktop_navigation'>
-      <ul className='navigation_section'>
+      <NavSection navLinks={navLinks.news} section='/news' />
+      <NavSection navLinks={navLinks.lodgers} section='/lodgers' />
+      <NavSection navLinks={navLinks.help} section='/help' />
+      <NavSection navLinks={navLinks.info} section='/info' />
+      {/* <ul className='navigation_section'>
         <li>
           <MenuItem href='/news' text='Новости' />
         </li>
@@ -58,7 +68,7 @@ function NavDesktop() {
         <li>
           <MenuItem href='/info/toowners' text='Правила' />
         </li>
-      </ul>
+      </ul> */}
     </nav>
   )
 }
