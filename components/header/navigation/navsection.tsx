@@ -1,19 +1,18 @@
-import React, { useRef } from "react"
+import { useRef } from "react"
 import Link from "next/link"
 
 import { pagesList } from "./pagesList"
+import MenuIcon from "./menuicon"
 
 function NavSection({ navLinks, section }) {
-  const ulRef = useRef()
+  const ulRef = useRef(null)
   const toggleMenu = (e) => {
     ulRef.current.classList.toggle("show_menu")
   }
   const showMenu = (e) => {
-    e.stopPropagation()
     e.currentTarget.classList.add("show_menu")
   }
   const hideMenu = (e) => {
-    e.stopPropagation()
     e.currentTarget.classList.remove("show_menu")
   }
   return (
@@ -24,14 +23,16 @@ function NavSection({ navLinks, section }) {
       onMouseLeave={hideMenu}
     >
       <button className='section_button' type='button' onClick={toggleMenu}>
-        {pagesList[section]}
+        {section ? pagesList[section] : <MenuIcon />}
       </button>
       {navLinks.map((linkParam, ind) => {
-        const link: string = `${section}/${linkParam}`
+        const link: string = section ? `${section}/${linkParam}` : linkParam
         return (
           <li key={ind}>
             <Link href={link}>
-              <a>{pagesList[link]}</a>
+              <a>
+                <div>{pagesList[link]}</div>
+              </a>
             </Link>
           </li>
         )
@@ -40,4 +41,4 @@ function NavSection({ navLinks, section }) {
   )
 }
 
-export default React.memo(NavSection)
+export default NavSection
