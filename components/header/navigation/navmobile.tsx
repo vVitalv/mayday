@@ -18,7 +18,7 @@ function NavMobile() {
     "/info/toowners",
   ]
   return (
-    <nav className='mobile_navigation'>
+    <nav className='navigation mobile_navigation'>
       <NavSection navLinks={navLinks} />
     </nav>
   )

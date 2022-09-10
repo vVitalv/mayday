@@ -3,6 +3,7 @@ $c-l-yellow2: #efea07;
 $c-l-purple: #937acc;
 $c-l-pink: #ed72aa;
 $c-l-pink2: #d60270;
+$c-l-text: rgb(87, 87, 87);
 $c-l-btn: adjust-color($c-l-yellow, $alpha: -0.8);
 $c-l-menu: adjust-color($c-l-yellow, $alpha: -0.3);
 
@@ -27,6 +28,7 @@ header {
   display: flex;
   flex-direction: column;
   z-index: 1;
+
   .upperheader {
     width: 100%;
     height: $header-li-height;
@@ -52,87 +54,19 @@ header {
       }
     }
 
-    .mobile_navigation {
-      display: none;
-      height: 100%;
-      width: $header-li-height;
-      @media (max-width: 1023px) {
-        display: block;
-      }
-      .navigation_section {
-        height: 100%;
-        position: relative;
-        width: 10rem;
-        margin: 0;
-        padding: 0;
-        border-radius: $header-li-height / 2;
-        background-color: $c-l-menu;
-        transition: height 0.3s;
-        .section_button {
-          background-color: $c-l-yellow;
-          top: 0;
-          font-weight: bold;
-          border-radius: $header-li-height / 2;
-          border: 0;
-          height: $header-li-height;
-          width: 100%;
-          position: absolute;
-        }
-        li {
-          height: $header-li-height;
-          width: 100%;
-          position: absolute;
-          visibility: hidden;
-          opacity: 0;
-          text-align: center;
-          font-weight: 500;
-          color: rgb(54, 53, 53);
-          list-style-type: none;
-          transition: all 0.3s;
-          a {
-            line-height: $header-li-height;
-          }
-          &:hover {
-            color: $c-l-purple;
-          }
-        }
-        &.show_menu {
-          height: calc($header-li-height * 5);
-          &:nth-child(3) {
-            height: $header-li-height * 3;
-          }
-          &:nth-child(4) {
-            height: $header-li-height * 5;
-          }
-          @for $i from 1 through 5 {
-            & li:nth-child(#{$i}) {
-              transform: translateY($header-li-height * ($i - 1));
-              visibility: visible;
-              opacity: 1;
-            }
-          }
-        }
-      }
-    }
-
-    .desktop_navigation {
+    .navigation {
       height: 100%;
       display: flex;
       user-select: none;
-      @media (max-width: 1023px) {
-        display: none;
-      }
       .navigation_section {
         height: 100%;
         position: relative;
-        width: 10rem;
-        margin: 0 1rem;
         padding: 0;
-        border-radius: $header-li-height / 2;
         background-color: $c-l-menu;
         transition: height 0.3s;
         .section_button {
           background-color: $c-l-yellow;
+          color: $c-l-text;
           font-weight: bold;
           border-radius: $header-li-height / 2;
           border: 0;
@@ -150,7 +84,7 @@ header {
           opacity: 0;
           text-align: center;
           font-weight: 500;
-          color: rgb(54, 53, 53);
+          color: $c-l-text;
           list-style-type: none;
           transition: all 0.3s;
           a {
@@ -177,7 +111,23 @@ header {
           }
         }
       }
+      &.desktop_navigation {
+        @media (max-width: 1023px) {
+          display: none;
+        }
+        .navigation_section {
+          width: 10rem;
+          margin: 0 0.8rem;
+          border-radius: $header-li-height / 2;
+        }
+      }
+      &.mobile_navigation {
+        @media (min-width: 1024px) {
+          display: none;
+        }
+      }
     }
+
     .header-buttons {
       display: flex;
       align-items: center;
@@ -200,6 +150,7 @@ header {
       }
     }
   }
+
   .underheader {
     position: fixed;
     top: $header-height;

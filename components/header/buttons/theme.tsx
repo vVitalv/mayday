@@ -1,9 +1,9 @@
-import LoginIcon from "./loginicon"
+import ThemeIcon from "./themeicon"
 
 function ThemeButton() {
   return (
     <button className='theme-button' type='button'>
-      <LoginIcon />
+      <ThemeIcon />
     </button>
   )
 }
