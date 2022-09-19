@@ -6,7 +6,7 @@ import MenuIcon from "./menuicon"
 
 function NavSection({ navLinks, section }) {
   const ulRef = useRef(null)
-  const toggleMenu = (e) => {
+  const toggleMenu = () => {
     ulRef.current.classList.toggle("show_menu")
   }
   const showMenu = (e) => {

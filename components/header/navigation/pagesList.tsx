@@ -1,7 +1,6 @@
 export const pagesList = {
   '/news': 'Новости',
   '/news/shelternews': 'Новости приюта',
-  '/news/shelternews': 'Новости приюта',
   '/news/worldnews': 'Новости мира',
   '/news/actions': 'Акции приюта',
   '/news/newsaboutus': 'СМИ о нас',

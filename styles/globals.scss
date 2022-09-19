@@ -63,13 +63,14 @@ header {
         position: relative;
         padding: 0;
         background-color: $c-l-menu;
-        transition: height 0.3s;
+        transition: all 0.3s;
         .section_button {
           background-color: $c-l-yellow;
           color: $c-l-text;
           font-weight: bold;
           border-radius: $header-li-height / 2;
           border: 0;
+          padding: 0;
           height: $header-li-height;
           width: 100%;
           position: absolute;
@@ -78,7 +79,6 @@ header {
         }
         li {
           height: $header-li-height;
-          width: 100%;
           position: absolute;
           visibility: hidden;
           opacity: 0;
@@ -95,14 +95,7 @@ header {
           }
         }
         &.show_menu {
-          height: $header-li-height * 5;
-          &:nth-child(3) {
-            height: $header-li-height * 3;
-          }
-          &:nth-child(4) {
-            height: $header-li-height * 5;
-          }
-          @for $i from 2 through 5 {
+          @for $i from 2 through 9 {
             & li:nth-child(#{$i}) {
               transform: translateY($header-li-height * ($i - 1));
               visibility: visible;
@@ -119,11 +112,38 @@ header {
           width: 10rem;
           margin: 0 0.8rem;
           border-radius: $header-li-height / 2;
+          li {
+            width: 100%;
+          }
+          &.show_menu {
+            height: $header-li-height * 5;
+            &:nth-child(3) {
+              height: $header-li-height * 3;
+            }
+          }
         }
       }
       &.mobile_navigation {
         @media (min-width: 1024px) {
           display: none;
+        }
+        .navigation_section {
+          width: 12rem;
+          margin: 0;
+          border-radius: $header-li-height / 2;
+          .section_button {
+            .menu_icon {
+              width: $header-li-height;
+              stroke: darkviolet;
+            }
+          }
+          li {
+            width: 12rem;
+          }
+          &.show_menu {
+            height: $header-li-height * 9;
+            width: 12rem;
+          }
         }
       }
     }
