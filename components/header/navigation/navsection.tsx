@@ -6,14 +6,21 @@ import MenuIcon from "./menuicon"
 
 function NavSection({ navLinks, section }) {
   const ulRef = useRef(null)
+
   const toggleMenu = () => {
     ulRef.current.classList.toggle("show_menu")
   }
+
+  const mediaQueryHover = window.matchMedia("(any-hover: hover)")
   const showMenu = (e) => {
-    e.currentTarget.classList.add("show_menu")
+    if (mediaQueryHover.matches) {
+      e.currentTarget.classList.add("show_menu")
+    }
   }
   const hideMenu = (e) => {
-    e.currentTarget.classList.remove("show_menu")
+    if (mediaQueryHover.matches) {
+      e.currentTarget.classList.remove("show_menu")
+    }
   }
   return (
     <ul
